@@ -19,5 +19,6 @@ class Map(m_settings.Settings):
                 x = x + 54
             y = y + 54
             x = self.X
+
 map1 = Map()
 map1.create_map()
