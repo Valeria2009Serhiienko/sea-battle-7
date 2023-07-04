@@ -8,7 +8,7 @@ import modules.cell.model_cell_bot as m_model_bot
 import modules.cell.create_map_bot as m_map_bot
 import modules.blit_el_ship.create_bot as m_bot 
 import modules.blit_el_ship.ship_4_blit as m_ship
-import random 
+import modules.blit_el_ship.create_bot as m_bot 
 
 pygame.init()
 
@@ -119,9 +119,8 @@ while game:
         # 4 
         if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:       
             X_Y_ship_4 = event.pos
-            if 770 <= X_Y_ship_4[0] <= 870 and 180 <= X_Y_ship_4[1] <= 205:
+            if m_ship.ship_4.X <= X_Y_ship_4[0] <= m_ship.ship_4.X + m_ship.ship_4.WIDTH and m_ship.ship_4.Y <= X_Y_ship_4[1] <= m_ship.ship_4.Y + m_ship.ship_4.HEIGHT:
                 if m_data.end_blit_ship_4[0] == False:
-                    # blit_ship_4 == False and
                     moving_ship_4 = True
                 
         if event.type == pygame.MOUSEMOTION and event.buttons[0] == 1:
@@ -131,12 +130,11 @@ while game:
 
         if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
             if moving_ship_4:
-                if m_ship.ship_4.X < 350 or m_ship.ship_4.X > 625 or m_ship.ship_4.Y < 170 or m_ship.ship_4.Y > 444:
+                if m_ship.ship_4.X < 190 or m_ship.ship_4.X > 465 or m_ship.ship_4.Y < 170 or m_ship.ship_4.Y > 444:
                     m_ship.ship_4.X = start_pos_ship_4_X 
                     m_ship.ship_4.Y = start_pos_ship_4_Y 
                     moving_ship_4 = False
                 else:
-                    #blit_ship_4 = True
                     m_data.end_blit_ship_4[0] = True
                     moving_ship_4 = False
 
@@ -150,7 +148,7 @@ while game:
         if blit_ship_3_1: 
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 X_Y_ship_3_1 = event.pos
-                if 770 <= X_Y_ship_3_1[0] <= 870 and 180 <= X_Y_ship_3_1[1] <= 205:
+                if m_ship.ship_3_1.X <= X_Y_ship_3_1[0] <= m_ship.ship_3_1.X + m_ship.ship_3_1.WIDTH and 180 <= X_Y_ship_3_1[1] <= 205:
                     if m_data.end_blit_ship_3_1[0] == False:  
                         moving_ship_3_1 = True
 
@@ -161,25 +159,22 @@ while game:
             
             if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
                 if moving_ship_3_1:
-                    if m_ship.ship_3_1.X < 350 or m_ship.ship_3_1.X > 625 or m_ship.ship_3_1.Y < 180 or m_ship.ship_3_1.Y > 444:
+                    if m_ship.ship_3_1.X < 190 or m_ship.ship_3_1.X > 465 or m_ship.ship_3_1.Y < 180 or m_ship.ship_3_1.Y > 444:
                         m_ship.ship_3_1.X = start_pos_ship_3_1_X
                         m_ship.ship_3_1.Y = start_pos_ship_3_1_Y  
                         moving_ship_3_1 = False
                     else:
-                        m_ship.ship_3_1.X > 350 or m_ship.ship_3_1.X < 625 or m_ship.ship_3_1.Y > 170 or m_ship.ship_3_1.Y < 444
                         m_data.end_blit_ship_3_1[0] = True
                         moving_ship_3_1 = False
 
                         m_ship.ship_3_1.collision_ship_4()
 
-                        #
                         blit_ship_3_2 = True
-                        #end_blit_ship_3_2 = True
-         
+
         if blit_ship_3_2:
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 X_Y_ship_3_2 = event.pos
-                if 770 <= X_Y_ship_3_2[0] <= 845 and 230 <= X_Y_ship_3_2[1] <= 255:
+                if m_ship.ship_3_2.X <= X_Y_ship_3_2[0] <= m_ship.ship_3_2.X + m_ship.ship_3_1.WIDTH and 230 <= X_Y_ship_3_2[1] <= 255:
                     if m_data.end_blit_ship_3_2[0] == False:  
                         moving_ship_3_2 = True
 
@@ -190,12 +185,11 @@ while game:
 
             if event.type == pygame.MOUSEBUTTONUP and event.button == 1: 
                 if moving_ship_3_2:
-                    if m_ship.ship_3_2.X < 350 or m_ship.ship_3_2.X > 625 or m_ship.ship_3_2.Y < 180 or m_ship.ship_3_2.Y > 444:
+                    if m_ship.ship_3_2.X < 190 or m_ship.ship_3_2.X > 465 or m_ship.ship_3_2.Y < 180 or m_ship.ship_3_2.Y > 444:
                         m_ship.ship_3_2.X = start_pos_ship_3_2_X
                         m_ship.ship_3_2.Y = start_pos_ship_3_2_Y 
                         moving_ship_3_2 = False
                     else:
-                        m_ship.ship_3_2.X > 350 or m_ship.ship_3_2.X < 625 or m_ship.ship_3_2.Y > 170 or m_ship.ship_3_2.Y < 444
                         m_data.end_blit_ship_3_2[0] = True
                         moving_ship_3_2 = False   
                         
@@ -209,7 +203,7 @@ while game:
         if blit_ship_2_1:
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 X_Y_ship_2_1 = event.pos
-                if 770 <= X_Y_ship_2_1[0] <= 820 and 180 <= X_Y_ship_2_1[1] <= 205:
+                if m_ship.ship_2_1.X <= X_Y_ship_2_1[0] <= m_ship.ship_2_1.X + m_ship.ship_2_1.WIDTH and 180 <= X_Y_ship_2_1[1] <= 205:
                     if m_data.end_blit_ship_2_1[0] == False: 
                         moving_ship_2_1 = True
 
@@ -220,24 +214,22 @@ while game:
 
             if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
                 if moving_ship_2_1:
-                    if m_ship.ship_2_1.X < 350 or m_ship.ship_2_1.X > 625 or m_ship.ship_2_1.Y < 180 or m_ship.ship_2_1.Y > 444:
+                    if m_ship.ship_2_1.X < 190 or m_ship.ship_2_1.X > 465 or m_ship.ship_2_1.Y < 180 or m_ship.ship_2_1.Y > 444:
                         m_ship.ship_2_1.X = start_pos_ship_2_1_X
                         m_ship.ship_2_1.Y = start_pos_ship_2_1_Y 
                         moving_ship_2_1 = False
                     else:
-                        m_ship.ship_2_1.X > 350 or m_ship.ship_2_1.X < 625 or m_ship.ship_2_1.Y > 170 or m_ship.ship_2_1.Y < 444
                         m_data.end_blit_ship_2_1[0] = True
                         moving_ship_2_1 = False   
                         m_ship.ship_2_1.collision_ship_4()
 
                         # 2_2
                         blit_ship_2_2 = True
-                        #end_blit_ship_2_2 = True
         
         if blit_ship_2_2:
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 X_Y_ship_2_2 = event.pos
-                if 770 <= X_Y_ship_2_2[0] <= 820 and 230 <= X_Y_ship_2_2[1] <= 255:
+                if m_ship.ship_2_2.X <= X_Y_ship_2_2[0] <= m_ship.ship_2_2.X + m_ship.ship_2_2.WIDTH and 230 <= X_Y_ship_2_2[1] <= 255:
                     if m_data.end_blit_ship_2_2[0] == False:  
                         moving_ship_2_2 = True
 
@@ -248,12 +240,11 @@ while game:
 
             if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
                 if moving_ship_2_2:
-                    if m_ship.ship_2_2.X < 350 or m_ship.ship_2_2.X > 625 or m_ship.ship_2_2.Y < 180 or m_ship.ship_2_2.Y > 444:
+                    if m_ship.ship_2_2.X < 190 or m_ship.ship_2_2.X > 465 or m_ship.ship_2_2.Y < 180 or m_ship.ship_2_2.Y > 444:
                         m_ship.ship_2_2.X = start_pos_ship_2_2_X
                         m_ship.ship_2_2.Y = start_pos_ship_2_2_Y 
                         moving_ship_2_2 = False
                     else:
-                        m_ship.ship_2_2.X > 350 or m_ship.ship_2_2.X < 625 or m_ship.ship_2_2.Y > 170 or m_ship.ship_2_2.Y < 444
                         m_data.end_blit_ship_2_2[0] = True
                         moving_ship_2_2 = False   
 
@@ -261,12 +252,11 @@ while game:
                         
                         # 2_3
                         blit_ship_2_3 = True
-                        #end_blit_ship_2_3 = True
         
         if blit_ship_2_3:
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 X_Y_ship_2_3 = event.pos
-                if 770 <= X_Y_ship_2_3[0] <= 820 and 280 <= X_Y_ship_2_3[1] <= 305:
+                if m_ship.ship_2_3.X <= X_Y_ship_2_3[0] <= m_ship.ship_2_3.X + m_ship.ship_2_3.WIDTH and 280 <= X_Y_ship_2_3[1] <= 305:
                     if m_data.end_blit_ship_2_3[0] == False:  
                         moving_ship_2_3 = True
 
@@ -277,7 +267,7 @@ while game:
 
             if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
                 if moving_ship_2_3:
-                    if m_ship.ship_2_3.X < 350 or m_ship.ship_2_3.X > 625 or m_ship.ship_2_3.Y < 180 or m_ship.ship_2_3.Y > 444:
+                    if m_ship.ship_2_3.X < 190 or m_ship.ship_2_3.X > 465 or m_ship.ship_2_3.Y < 180 or m_ship.ship_2_3.Y > 444:
                         m_ship.ship_2_3.X = start_pos_ship_2_3_X
                         m_ship.ship_2_3.Y = start_pos_ship_2_3_Y 
                         moving_ship_2_3 = False
@@ -295,7 +285,7 @@ while game:
         if blit_ship_1_1:
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 X_Y_ship_1_1 = event.pos
-                if 770 <= X_Y_ship_1_1[0] <= 795 and 180 <= X_Y_ship_1_1[1] <= 205:
+                if m_ship.ship_1_1.X <= X_Y_ship_1_1[0] <= m_ship.ship_1_1.X + m_ship.ship_1_1.WIDTH and 180 <= X_Y_ship_1_1[1] <= 205:
                     if m_data.end_blit_ship_1_1[0] == False:  
                         moving_ship_1_1 = True
 
@@ -306,24 +296,22 @@ while game:
 
             if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
                 if moving_ship_1_1:
-                    if m_ship.ship_1_1.X < 350 or m_ship.ship_1_1.X > 625 or m_ship.ship_1_1.Y < 180 or m_ship.ship_1_1.Y > 444:
+                    if m_ship.ship_1_1.X < 190 or m_ship.ship_1_1.X > 465 or m_ship.ship_1_1.Y < 180 or m_ship.ship_1_1.Y > 444:
                         m_ship.ship_1_1.X = start_pos_ship_1_1_X
                         m_ship.ship_1_1.Y = start_pos_ship_1_1_Y 
                         moving_ship_1_1 = False
                     else:
-                        m_ship.ship_1_1.X > 350 or m_ship.ship_1_1.X < 625 or m_ship.ship_1_1.Y > 170 or m_ship.ship_1_1.Y < 444
                         m_data.end_blit_ship_1_1[0] = True
                         moving_ship_1_1 = False   
 
                         m_ship.ship_1_1.collision_ship_4() 
                         # 1_2
                         blit_ship_1_2 = True
-                        #end_blit_ship_1_2 = True
 
         if blit_ship_1_2:
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 X_Y_ship_1_2 = event.pos
-                if 770 <= X_Y_ship_1_2[0] <= 795 and 230 <= X_Y_ship_1_2[1] <= 255:
+                if m_ship.ship_1_2.X <= X_Y_ship_1_2[0] <= m_ship.ship_1_2.X + m_ship.ship_1_2.WIDTH and 230 <= X_Y_ship_1_2[1] <= 255:
                     if m_data.end_blit_ship_1_2[0] == False:  
                         moving_ship_1_2 = True
 
@@ -334,24 +322,22 @@ while game:
 
             if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
                 if moving_ship_1_2:
-                    if m_ship.ship_1_2.X < 350 or m_ship.ship_1_2.X > 625 or m_ship.ship_1_2.Y < 180 or m_ship.ship_1_2.Y > 444:
+                    if m_ship.ship_1_2.X < 190 or m_ship.ship_1_2.X > 465 or m_ship.ship_1_2.Y < 180 or m_ship.ship_1_2.Y > 444:
                         m_ship.ship_1_2.X = start_pos_ship_1_2_X
                         m_ship.ship_1_2.Y = start_pos_ship_1_2_Y 
                         moving_ship_1_2 = False
                     else:
-                        m_ship.ship_1_2.X > 350 or m_ship.ship_1_2.X < 625 or m_ship.ship_1_2.Y > 170 or m_ship.ship_1_2.Y < 444
                         m_data.end_blit_ship_1_2[0] = True
                         moving_ship_1_2 = False   
 
                         m_ship.ship_1_2.collision_ship_4()
                         # 1_3
                         blit_ship_1_3 = True
-                        #end_blit_ship_1_3 = True
 
         if blit_ship_1_3:
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 X_Y_ship_1_3 = event.pos
-                if 770 <= X_Y_ship_1_3[0] <= 795 and 280 <= X_Y_ship_1_3[1] <= 305:
+                if m_ship.ship_1_3.X <= X_Y_ship_1_3[0] <= m_ship.ship_1_3.X + m_ship.ship_1_3.WIDTH and 280 <= X_Y_ship_1_3[1] <= 305:
                     if m_data.end_blit_ship_1_3[0] == False:  
                         moving_ship_1_3 = True
 
@@ -362,7 +348,7 @@ while game:
 
             if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
                 if moving_ship_1_3:
-                    if m_ship.ship_1_3.X < 350 or m_ship.ship_1_3.X > 625 or m_ship.ship_1_3.Y < 180 or m_ship.ship_1_3.Y > 444:
+                    if m_ship.ship_1_3.X < 190 or m_ship.ship_1_3.X > 465 or m_ship.ship_1_3.Y < 180 or m_ship.ship_1_3.Y > 444:
                         m_ship.ship_1_3.X = start_pos_ship_1_3_X
                         m_ship.ship_1_3.Y = start_pos_ship_1_3_Y 
                         moving_ship_1_3 = False
@@ -378,7 +364,7 @@ while game:
         if blit_ship_1_4:
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 X_Y_ship_1_4 = event.pos
-                if 770 <= X_Y_ship_1_4[0] <= 795 and 330 <= X_Y_ship_1_4[1] <= 355:
+                if m_ship.ship_1_4.X <= X_Y_ship_1_4[0] <= m_ship.ship_1_4.X + m_ship.ship_1_4.WIDTH and 330 <= X_Y_ship_1_4[1] <= 355:
                     if m_data.end_blit_ship_1_4[0] == False:  
                         moving_ship_1_4 = True
 
@@ -389,12 +375,11 @@ while game:
 
             if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
                 if moving_ship_1_4:
-                    if m_ship.ship_1_4.X < 350 or m_ship.ship_1_4.X > 625 or m_ship.ship_1_4.Y < 180 or m_ship.ship_1_4.Y > 444:
+                    if m_ship.ship_1_4.X < 190 or m_ship.ship_1_4.X > 625 or m_ship.ship_1_4.Y < 180 or m_ship.ship_1_4.Y > 444:
                         m_ship.ship_1_4.X = start_pos_ship_1_4_X
                         m_ship.ship_1_4.Y = start_pos_ship_1_4_Y 
                         moving_ship_1_4 = False
                     else:
-                        m_ship.ship_1_4.X > 350 or m_ship.ship_1_4.X < 625 or m_ship.ship_1_4.Y > 170 or m_ship.ship_1_4.Y < 444
                         m_data.end_blit_ship_1_4[0] = True
                         moving_ship_1_4 = False
 
@@ -403,7 +388,6 @@ while game:
                             
                         m_ship.ship_1_4.collision_ship_4()
         
-
     if button_start:
         m_elements.bg.blit_sprite(screen= screen)
 
@@ -432,6 +416,20 @@ while game:
             if button_ready:
                 for cell in m_data.list_cells_bot:
                     cell.blit_sprite(screen= screen)
+                    m_bot.bot.set_ship_bot()
+
+                    m_bot.ship_3_1.set_ship_bot()
+                    m_bot.ship_3_2.set_ship_bot()
+
+                    m_bot.ship_2_1.set_ship_bot()
+                    m_bot.ship_2_2.set_ship_bot()
+                    m_bot.ship_2_3.set_ship_bot()
+
+                    m_bot.ship_1_1.set_ship_bot()
+                    m_bot.ship_1_2.set_ship_bot()
+                    m_bot.ship_1_3.set_ship_bot()
+                    m_bot.ship_1_4.set_ship_bot()
+
 
     pygame.display.flip()
     

@@ -3,7 +3,7 @@ import modules.main_modules.data_base as m_data
 import modules.cell.model_cell as m_model
 
 class Map(m_settings.Settings):
-    def __init__(self, x1= 350, y1= 170):
+    def __init__(self, x1= 190, y1= 170):
         m_settings.Settings.__init__(self, x= x1, y= y1)
         
     def create_map(self):

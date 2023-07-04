@@ -3,7 +3,7 @@ import modules.main_modules.data_base as m_data
 import modules.cell.model_cell_bot as m_model_bot
 
 class Map_bot(m_settings.Settings):
-    def __init__(self, x2= 675, y2= 100):
+    def __init__(self, x2= 545, y2= 170):
         m_settings.Settings.__init__(self, x= x2, y= y2)
 
     def create_map_bot(self):
