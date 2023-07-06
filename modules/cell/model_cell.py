@@ -1,7 +1,7 @@
 import modules.main_modules.settings as m_settings
 import modules.main_modules.data_base as m_data
 import modules.cell.create_cell as m_cell
-
+import modules.blit_el_ship.ship_4_blit as m_ship
 
 class Model(m_settings.Settings):
     def __init__(self, width1= 0, height1= 0, x1= 0, y1= 0, file_name1= None):

@@ -28,11 +28,6 @@ class Settings:
         
     def blit_sprite(self, screen):
         screen.blit(self.IMG, (self.X, self.Y))  
-
-#if turn_4 == False:
-#self.IMG = pygame.transform.rotate(transform_image, -90)
-#else:
-#    return pygame.transform.rotate(transform_image, 90)
     
 
 
